@@ -1,0 +1,5 @@
+# Folders & files ignored by Git 
+# dist/
+.DS__Store
+.node_modules
+.ChallendeReadme.md

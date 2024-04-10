@@ -1,0 +1,16 @@
+{
+    "name": "svg-shapes",
+    "version": "1.0.0",
+    "description": "A Node.js application to generate SVG code for different shapes",
+    "main": "index.js",
+    "scripts": {
+      "test": "jest"
+    },
+    "author": "Your Name",
+    "license": "MIT",
+    "devDependencies": {
+      "jest": "^27.0.0"
+    }
+  }
+  
+  
