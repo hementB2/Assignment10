@@ -47,3 +47,6 @@ SVG Logo Maker was inspired by the need for a simple tool to create logos for pe
 ![alt text](image-4.png)
 
 ## Video Link for the Assignment-
+https://drive.google.com/file/d/1r9aKeb8HEi5Bh_5mhgzdr0rqpet1Vr0F/view
+
+![alt text](image-5.png)
