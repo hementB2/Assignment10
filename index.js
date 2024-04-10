@@ -1,16 +1,29 @@
 import('inquirer').then(({ default: inquirer }) => {
-    // Prompt user for shape and color
+    // Prompt user for text, text color, shape, and shape color
     inquirer.prompt([
+        {
+            type: 'input',
+            name: 'text',
+            message: 'Enter text for the logo (up to three characters):',
+            validate: function (input) {
+                return input.length <= 3 ? true : 'Text should be up to three characters.';
+            }
+        },
+        {
+            type: 'input',
+            name: 'textColor',
+            message: 'Enter text color (keyword or hexadecimal):'
+        },
         {
             type: 'list',
             name: 'shape',
             message: 'Choose a shape:',
-            choices: ['Triangle', 'Circle', 'Square']
+            choices: ['Triangle', 'Square', 'Circle']
         },
         {
             type: 'input',
-            name: 'color',
-            message: 'Enter a color:'
+            name: 'shapeColor',
+            message: 'Enter shape color (keyword or hexadecimal):'
         }
     ]).then(userInput => {
         // Import shape classes based on user input
@@ -32,8 +45,13 @@ import('inquirer').then(({ default: inquirer }) => {
 
         // Create instance of shape, set color, and render SVG
         const shape = new Shape();
-        shape.setColor(userInput.color);
-        const svgContent = shape.render();
+        shape.setColor(userInput.shapeColor);
+        const svgContent = `
+          <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+            ${shape.render()}
+            <text x="150" y="125" font-size="60" text-anchor="middle" fill="${userInput.textColor}">${userInput.text}</text>
+          </svg>
+        `;
 
         // Import the 'fs' module for file operations
         import('fs').then(({ default: fs }) => {
@@ -50,3 +68,4 @@ import('inquirer').then(({ default: inquirer }) => {
 }).catch(err => {
     console.error('Error loading inquirer:', err);
 });
+
