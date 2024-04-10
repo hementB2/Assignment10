@@ -1,6 +1,0 @@
-
-          <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-            <rect x="50" y="50" height="100" width="100" fill="Red" />
-            <text x="100" y="120" font-size="60" text-anchor="middle" fill="White">SVG</text>
-          </svg>
-        
